@@ -14,7 +14,6 @@ public class HomePage extends WebPage {
 
 		add(rederizandoPagina());
 
-		add(DevolucaoPagina());
 		add(principalPagina());
 
 	}
@@ -47,24 +46,6 @@ public class HomePage extends WebPage {
 			@Override
 			public void onClick(AjaxRequestTarget arg0) {
 				setResponsePage(ColecaoForm.class);
-
-			}
-		};
-		button.setOutputMarkupId(true);
-		add(button);
-		return button;
-	}
-
-	// Metodo deRederizar a pagina
-	public AjaxLink<?> DevolucaoPagina() {
-		// Botão normal
-		AjaxLink<Object> button = new AjaxLink<Object>("devolucao") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick(AjaxRequestTarget arg0) {
-				setResponsePage(DevolucaoForm.class);
 
 			}
 		};

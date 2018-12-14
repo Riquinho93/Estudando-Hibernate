@@ -66,7 +66,7 @@ public class ColecaoPanel extends Panel {
 			}
 		};
 
-		DateTextField data = new DateTextField("dtEntrada", "dd/MM/yyyy");
+		DateTextField data = new DateTextField("dt_saida", "dd/MM/yyyy");
 		datePickerInicial.setAutoHide(true);
 		data.add(datePickerInicial);
 		data.setOutputMarkupId(true);

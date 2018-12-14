@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.sun.mail.imap.protocol.UID;
 
@@ -20,31 +21,28 @@ public class ColecaoModel implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	@Column(name = "id")
-	private Long colecaoId;
+	private Long id;
 
-	private UID iddColecao;
-
-//	@Column(name = "nome")
+	// @Column(name = "nome")
 	private String nome;
 
-//	@Column(name = "dt_saida")
-	private String dtEntrada;
-
+	// @Column(name = "dt_saida")
+	private String dt_saida;
+	
 	private boolean answer;
 
-//	//@OneToMany(mappedBy = "colecaoId")
-//	private Collection<ProdutoModel> listOs;
-//	
+	// //@OneToMany(mappedBy = "colecaoId")
+	// private Collection<ProdutoModel> listOs;
+	//
 	public ColecaoModel() {
 	}
 
 	public Long getColecaoId() {
-		return colecaoId;
+		return id;
 	}
 
-	public void setColecaoId(Long colecaoId) {
-		this.colecaoId = colecaoId;
+	public void setColecaoId(long i) {
+		this.id = i;
 	}
 
 	public String getNome() {
@@ -55,6 +53,15 @@ public class ColecaoModel implements Serializable {
 		this.nome = nome;
 	}
 
+
+	public String getDtEntrada() {
+		return dt_saida;
+	}
+
+	public void setDtEntrada(String dtEntrada) {
+		this.dt_saida = dtEntrada;
+	}
+	@Transient
 	public boolean isAnswer() {
 		return answer;
 	}
@@ -62,27 +69,4 @@ public class ColecaoModel implements Serializable {
 	public void setAnswer(boolean answer) {
 		this.answer = answer;
 	}
-
-	public String getDtEntrada() {
-		return dtEntrada;
-	}
-
-	public void setDtEntrada(String dtEntrada) {
-		this.dtEntrada = dtEntrada;
-	}
-
-	public ColecaoModel(String nome, String dtEntrada) {
-		super();
-		this.nome = nome;
-		this.dtEntrada = dtEntrada;
-	}
-
-	public UID getIddColecao() {
-		return iddColecao;
-	}
-
-	public void setIddColecao(UID iddColecao) {
-		this.iddColecao = iddColecao;
-	}
-
 }

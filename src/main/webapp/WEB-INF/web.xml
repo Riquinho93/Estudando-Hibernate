@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<display-name>Teste</display-name>
+	<display-name>Hibernate</display-name>
 
 	<!--
 		There are three means to configure Wickets configuration mode and they 
@@ -28,7 +28,7 @@
 	</context-param>
     
 	<filter>
-		<filter-name>wicket.Teste</filter-name>
+		<filter-name>wicket.Hibernate</filter-name>
 		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
 		<init-param>
 			<param-name>applicationClassName</param-name>
@@ -37,11 +37,11 @@
 	</filter>
 
 	<filter-mapping>
-		<filter-name>wicket.Teste</filter-name>
+		<filter-name>wicket.Hibernate</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>Spring</servlet-name>
 		<servlet-class>
 			org.springframework.web.servlet.DispatcherServlet
@@ -51,5 +51,5 @@
 	 <servlet-mapping>
         <servlet-name>Spring</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping> 
+    </servlet-mapping>  -->
 </web-app>

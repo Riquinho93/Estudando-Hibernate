@@ -18,9 +18,11 @@
 		<property name="password" value="" />
 	</bean>
 
-	<bean id="daoColecao" class="/Teste/src/main/java/br/safeerp/dao/ColecaoImplDao.java" />
+	<bean id="daoColecao" class="ColecaoImplDao.java" >
+		<property name=""></property>
+	</bean>
 
-	<bean id="colecaoService" class="/Teste/src/main/java/br/safeerp/service/ColecaoServiceImpl.java">
+	<bean id="colecaoService" class="ColecaoServiceImpl.java">
 		<property name="daoColecao" ref="daoColecao"></property>
 	</bean>
 

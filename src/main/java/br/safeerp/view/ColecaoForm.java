@@ -36,7 +36,7 @@ public class ColecaoForm extends HomePage {
 	private WebMarkupContainer listContainer = null;
 	private LoadableDetachableModel<List<ColecaoModel>> loadList;
 //	ColecaoImplDao col;
-	//@SpringBean
+	
 //	private ColecaoServiceImpl colecaoService;
 
 	public ColecaoForm() {
@@ -141,7 +141,6 @@ public class ColecaoForm extends HomePage {
 				// item.add(new Label("ID", user.getId()));
 				item.add(new Label("nome", user.getNome()));
 				item.add(new Label("dtEntrada", user.getDtEntrada()));
-				item.add(visualizar(item.getIndex(), user));
 				item.add(editando(user));
 				item.add(removendo(item.getIndex()));
 			}
@@ -216,28 +215,6 @@ public class ColecaoForm extends HomePage {
 				modalWindow.show(target);
 
 			}
-		};
-
-		button1.setOutputMarkupId(true);
-		form.add(button1);
-		return button1;
-	}
-
-	// Enviando para Pagina OrdemServicoForm
-	AjaxLink<ProdutoForm> visualizar(final int index, final ColecaoModel user) {
-		AjaxLink<ProdutoForm> button1 = new AjaxLink<ProdutoForm>("vis") {
-
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void onClick(AjaxRequestTarget target) {
-				PageParameters parameters = new PageParameters();
-				parameters.add("nome", user.getNome());
-				parameters.add("dtEntrada", user.getDtEntrada());
-				setResponsePage(ProdutoForm.class, parameters);
-
-			}
-
 		};
 
 		button1.setOutputMarkupId(true);
