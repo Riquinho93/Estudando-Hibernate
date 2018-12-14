@@ -9,7 +9,7 @@
 
 		<!-- Configuração de conexão com o bando de dados -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/bdibits</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/aprendendo_hibernate</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
