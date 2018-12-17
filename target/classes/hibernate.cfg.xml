@@ -9,7 +9,7 @@
 
 		<!-- Configuração de conexão com o bando de dados -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/aprendendo_hibernate</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/aprendendo_hibernate3</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
@@ -30,9 +30,16 @@
 		<property name="format_sql">false</property>
 
 		<!-- criar as tabelas do banco -->
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		
 		<mapping class="br.safeerp.entitidades.UsuarioModel"/>
+		<mapping class="br.safeerp.entitidades.Veiculo"/>
+		<mapping class="br.safeerp.entitidades.Funcionario"/>
+		<mapping class="br.safeerp.entitidades.Projeto"/>
+		
+		<mapping class="br.safeerp.herancas.VeiculoHerancao"/>
+		<mapping class="br.safeerp.herancas.QuadroRodas"/>
+		<mapping class="br.safeerp.herancas.DuasRodas"/>
 	</session-factory>
 
 </hibernate-configuration>
