@@ -1,5 +1,7 @@
 package br.safeerp.testes;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -13,8 +15,15 @@ public class CrudFuncionarioTeste {
 
 		Funcionario funcionario = new Funcionario();
 	//	funcionario.setId(4);
-		funcionario.setNome("João de Deus");
-		funcionario.setSalario(70.00);
+		funcionario.setNome("Henrique");
+		funcionario.setSalario(100000.00);
+		funcionario.setDataAdmissao(new Date());
+		
+		Funcionario funcionario2 = new Funcionario();
+		//	funcionario.setId(4);
+			funcionario2.setNome("neymar Jr");
+			funcionario2.setSalario(2000000.00);
+			funcionario2.setDataAdmissao(new Date());
 
 		// Salvar
 		//salvar(funcionario);
@@ -29,10 +38,10 @@ public class CrudFuncionarioTeste {
 		//atualizar(funcionarioBanco);
 
 		// Salvar ou Alterar
-		SalvarOuAlterar(funcionario);
+		SalvarOuAlterar(funcionario2);
 
 		// Excluir
-		//excluir(3);
+		//excluir(13);
 	}
 
 	public static void salvar(Funcionario funcionario) {

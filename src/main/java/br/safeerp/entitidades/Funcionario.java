@@ -1,6 +1,7 @@
 package br.safeerp.entitidades;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Funcionario {
@@ -18,6 +21,7 @@ public class Funcionario {
 	private Integer id;
 	private String nome;
 	private Double salario;
+	private Date dataAdmissao;
 	private List<Projeto> projetos = new ArrayList<Projeto>();
 
 	@Id
@@ -31,8 +35,7 @@ public class Funcionario {
 	}
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "func_proj", joinColumns = @JoinColumn(name = "id_func"),
-	inverseJoinColumns = @JoinColumn(name = "id_proj"))
+	@JoinTable(name = "func_proj", joinColumns = @JoinColumn(name = "id_func") , inverseJoinColumns = @JoinColumn(name = "id_proj") )
 	public List<Projeto> getProjetos() {
 		return projetos;
 	}
@@ -55,6 +58,15 @@ public class Funcionario {
 
 	public void setSalario(Double salario) {
 		this.salario = salario;
+	}
+	
+	@Temporal(TemporalType.DATE) // pega so a data sem horario e outros
+	public Date getDataAdmissao() {
+		return dataAdmissao;
+	}
+
+	public void setDataAdmissao(Date dataAdmissao) {
+		this.dataAdmissao = dataAdmissao;
 	}
 
 }
