@@ -13,17 +13,17 @@
 	<bean id="dataSouce"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/bdibits"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/aprendendo_hibernate3"></property>
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
 
-	<bean id="daoColecao" class="ColecaoImplDao.java" >
-		<property name=""></property>
+	<bean id="funcionarioDao" class="br.safeerp.FuncionarioDaoImpl.java" >
+		 <property name=""></property> 
 	</bean>
 
-	<bean id="colecaoService" class="ColecaoServiceImpl.java">
-		<property name="daoColecao" ref="daoColecao"></property>
+	<bean id="funcionarioService" class="br.safeerp.FuncionarioImpl.java">
+		<property name="funcionarioDao" ref="br.safeerp.FuncionarioImpl"></property>
 	</bean>
 
 	<!-- <bean id="daoOrdem" class="dao.OrdemImpl" /> <bean id="serviceOrdem" 

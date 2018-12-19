@@ -29,8 +29,8 @@ public class CrudFuncionarioTeste {
 		//salvar(funcionario);
 
 		// Buscar
-//		Funcionario funcionarioBanco = buscarPorId(4);
-//		System.out.println("Nome: " + funcionarioBanco.getNome());
+		Funcionario funcionarioBanco = buscarPorId(14);
+		System.out.println("Nome: " + funcionarioBanco.getNome());
 
 		// Atualizar
 //		funcionarioBanco.setNome("Teresa");
@@ -38,7 +38,7 @@ public class CrudFuncionarioTeste {
 		//atualizar(funcionarioBanco);
 
 		// Salvar ou Alterar
-		SalvarOuAlterar(funcionario2);
+		//SalvarOuAlterar(funcionario2);
 
 		// Excluir
 		//excluir(13);
